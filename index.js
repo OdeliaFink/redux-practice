@@ -2,6 +2,7 @@ const redux = require('redux');
 
 //redux store allows access to state via getState()
 const createStore = redux.createStore;
+const bindActionCreatores = redux.bindActionCreators;
 
 const CAKE_ORDER = 'CAKE_ORDERED';
 const CAKE_RESTOCK = 'CAKE_RESTOCK';
@@ -57,9 +58,15 @@ console.log('initial state', store.getState());
 const unsubscribe = store.subscribe(() =>
   console.log('updated state', store.getState())
 );
-store.dispatch(orderCake());
-store.dispatch(orderCake());
-store.dispatch(orderCake());
-store.dispatch(restockCake(3));
+// store.dispatch(orderCake());
+// store.dispatch(orderCake());
+// store.dispatch(orderCake());
+// store.dispatch(restockCake(3));
+
+const action = bindActionCreatores({ orderCake, restockCake }, store.dispatch);
+action.orderCake();
+action.orderCake();
+action.orderCake();
+action.restockCake(3);
 
 unsubscribe();
