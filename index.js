@@ -1,10 +1,13 @@
 const redux = require('redux');
-const produce = require('immer').produce;
+const reduxLogger = require('redux-logger');
+const logger = reduxLogger.createLogger();
+//logs exact events from before (initial), event (action), and new state
 
 //redux store allows access to state via getState()
 const createStore = redux.createStore;
 const bindActionCreatores = redux.bindActionCreators;
 const combineReducers = redux.combineReducers;
+const applyMiddleWare = redux.applyMiddleware;
 
 const CAKE_ORDER = 'CAKE_ORDERED';
 const CAKE_RESTOCK = 'CAKE_RESTOCK';
@@ -95,14 +98,11 @@ const rootReducer = combineReducers({
   iceCream: iceCreamReducer,
 });
 
-const store = createStore(rootReducer);
-console.log('🚀 ~ file: index.js:131 ~ store:', store);
-console.log('initial state', store.getState());
+const store = createStore(rootReducer, applyMiddleWare(logger));
 
 //anytime the store updates we log to console
-const unsubscribe = store.subscribe(() =>
-  console.log('updated state', store.getState())
-);
+// const unsubscribe = store.subscribe(() => {});
+
 // store.dispatch(orderCake());
 // store.dispatch(orderCake());
 // store.dispatch(orderCake());
@@ -113,11 +113,8 @@ const action = bindActionCreatores(
   store.dispatch
 );
 action.orderCake();
-action.orderCake();
-action.orderCake();
 action.restockCake(3);
-action.orderIceCream();
 action.orderIceCream();
 action.restockIceCream(9);
 
-unsubscribe();
+// unsubscribe();
