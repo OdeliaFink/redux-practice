@@ -23,6 +23,8 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case CAKE_ORDER:
       return {
+        ...state,
+        //first make a copy of state object and onnly update number of cakes without affection other properties
         numberOfCakes: state.numberOfCakes - 1,
       };
     default:
