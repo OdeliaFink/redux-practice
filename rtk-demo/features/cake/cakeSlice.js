@@ -10,7 +10,7 @@ const cakeSlice = createSlice({
     ordered: (state) => {
       state.numOfCakes--;
     },
-    resocked: (state, action) => {
+    restocked: (state, action) => {
       state.numOfCakes += action.payload;
     },
   },
