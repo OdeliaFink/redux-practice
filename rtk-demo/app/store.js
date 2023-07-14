@@ -4,7 +4,7 @@ const reduxLogger = require('redux-logger');
 const cakeReducer = require('../features/cake/cakeSlice');
 const icecreamReducer = require('../features/icecream/icecreamSlice');
 
-const logger = reduxLogger.createLogger();
+// const logger = reduxLogger.createLogger();
 
 const store = configureStore({
   //specify all the reducers from slices that belong to features
@@ -12,7 +12,7 @@ const store = configureStore({
     cake: cakeReducer,
     icecream: icecreamReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
 module.exports = store;
