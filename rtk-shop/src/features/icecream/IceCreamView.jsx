@@ -9,10 +9,10 @@ const IceCreamView = () => {
   const [value, setValue] = React.useState(1);
   return (
     <div>
-      <h2 style={{ fontSize: '3rem' }}>
+      <h2 style={{ fontSize: '3rem', textAlign: 'center' }}>
         number of ice cream - {numOfIcecreams}
       </h2>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
         <button onClick={() => dispatch(ordered())}>more ice cream</button>
         <input
           type="number"

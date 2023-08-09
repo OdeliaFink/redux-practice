@@ -13,7 +13,7 @@ const CakeView = () => {
       <div>
         <h2 style={{ fontSize: '3rem' }}>number of cakes - {numOfCakes}</h2>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
         <button onClick={() => dispatch(ordered())}>more cake </button>
         <input
           type="number"

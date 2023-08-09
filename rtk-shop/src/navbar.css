@@ -1,0 +1,38 @@
+.container {
+  height: 100vh;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 40px auto 40px;
+  grid-template-areas: '. h h h h h h h h h h h' 'm c c c c c c c c c c c' '. f f f f f f f f f f f';
+}
+
+.header {
+  background-color: rgb(235, 150, 150);
+  /* font-size: 2rem;
+  color: white; */
+  grid-area: h;
+}
+
+.menu {
+  /* font-size: 2rem; */
+  /* color: white; */
+  background-color: rgb(130, 216, 156);
+  grid-area: m;
+}
+
+.content {
+  /* font-size: 2rem; */
+  background-color: rgb(130, 161, 197);
+  color: white;
+  grid-area: c;
+}
+
+.footer {
+  /* font-size: 2rem; */
+  background-color: rgb(255, 202, 104);
+  color: white;
+  grid-area: f;
+
+  /* could also write 1/-1 in case we don't know how many columns */
+}
