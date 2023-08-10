@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CakeView from '../../rtk-shop/src/features/cake/CakeView';
 import IceCreamView from '../../rtk-shop/src/features/icecream/IceCreamView';
 import UserView from '../../rtk-shop/src/features/user/UserView';
+import CartView from './features/cart/CartView';
 import Home from './Home';
 import Nav from './Navbar';
 import Header from './Navbar';
@@ -22,6 +23,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/cakes" element={<CakeView />} />
               <Route path="/icecream" element={<IceCreamView />} />
+              <Route path="/cart" element={<CartView />} />
               {/* Add more routes here */}
             </Routes>
           </div>

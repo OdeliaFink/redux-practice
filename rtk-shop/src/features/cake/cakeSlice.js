@@ -2,20 +2,32 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   numOfCakes: 10,
+  numOfRedVelvet: 10,
 };
+
 const cakeSlice = createSlice({
   name: 'cake',
   initialState,
   reducers: {
-    ordered: (state) => {
+    orderedCake: (state) => {
       state.numOfCakes--;
     },
-    restocked: (state, action) => {
+    restockedCake: (state, action) => {
       state.numOfCakes += action.payload;
+    },
+    orderedRedVelvet: (state) => {
+      state.numOfRedVelvet--;
+    },
+    restockedRedVelvet: (state, action) => {
+      state.numOfRedVelvet += action.payload;
     },
   },
 });
 
 export default cakeSlice.reducer;
-export const { ordered, restocked } = cakeSlice.actions;
-//takes care of defining an action type constant, and object, an action creator, the swtich statements and immutable updates (ie: ...state)
+export const {
+  orderedCake,
+  restockedCake,
+  orderedRedVelvet,
+  restockedRedVelvet,
+} = cakeSlice.actions;

@@ -15,6 +15,9 @@ const NavBar = () => {
         <Link to="/icecream" className="navbar-item">
           Ice Cream
         </Link>
+        <Link to="/cart" className="navbar-item">
+          Cart
+        </Link>
       </div>
     </nav>
   );
